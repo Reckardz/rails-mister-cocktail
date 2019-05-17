@@ -1,27 +1,29 @@
 <div class="container">
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 800, crop: :fill %>
-  <div class="card-trip">
-    <div class="card-trip-infos">
+  <div class="card-show-category" style="background-image: linear-gradient(rgba(250,250,250,0.2), rgba(0,0,0,0.4)), url('<%= cl_image_path(@cocktail.photo) %>')">
+    <h2><%= @cocktail.name %></h2>
+  </div>
+  <div class="card-trip-infos">
+    <div>
+      <hr>
+      <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.description %> of <%= dose.ingredient.name %>
+        <%= link_to 'Delete', dose_path(dose),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+      </div>
+      <hr>
       <div>
-        <h2><%= @cocktail.name %></h2>
-        <hr>
-        <% @cocktail.doses.each do |dose| %>
-          <p><%= dose.description %> of <%= dose.ingredient.name %>
-             <%= link_to 'Delete', dose_path(dose),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></p>
-        <% end %>
-        <hr>
         <h4>Add an ingredient:</h4>
         <%= simple_form_for [@cocktail, @dose] do |l| %>
         <%= l.input :description %>
         <%= l.association :ingredient, as: :select %>
-        <%= l.button :submit, class: "btn btn-primary"%>
+        <%= l.button :submit, class: "cocktail-btn"%>
         <% end %>
       </div>
-    </div>
-  </div>
 </div>
+
+
 
 
 

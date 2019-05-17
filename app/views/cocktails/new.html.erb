@@ -1,8 +1,13 @@
 <div class="container">
+  <div class="card-new-category d-flex flex-column" style="background-image: linear-gradient(rgba(250,250,250,0.2), rgba(0,0,0,0.4)),
+    url('https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1517521303/180131-wondrich-bad-cocktail-tease_wghhv8')">
+  <h2>Make a new cocktail!</h2>
+  </div>
+  <hr>
   <%= simple_form_for (@cocktail) do |l| %>
   <%= l.input :name %>
   <%= l.input :photo %>
-  <%= l.input :photo_cache, as: :hidden %>
-  <%= l.button :submit, class: "btn btn-primary" %>
+  <%= l.input :photo_cache, as: :hidden, class: "cocktail-btn"  %>
+  <%= l.button :submit, class: "cocktail-btn" %>
   <% end %>
 </div>

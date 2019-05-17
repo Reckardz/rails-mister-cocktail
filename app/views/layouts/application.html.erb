@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMisterCocktail</title>
+    <title>Paris Cocktail Festival</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,9 +14,13 @@
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <img src="https://www.paris-cocktail-festival.com/theme/images/logos/PCF2018_logo-cookies.png" alt="" class="logo">
-      <div>
-        <%= link_to 'Cocktail List', cocktails_path %>
-        <%= link_to 'Make a cocktail!', new_cocktail_path %>
+      <div class="d-flex">
+        <div class="pr-5">
+        <h3><%= link_to 'Cocktail List', cocktails_path %></h3>
+        </div>
+        <div>
+        <h3><%= link_to 'Make a cocktail!', new_cocktail_path %></h3>
+        </div>
       </div>
     </div>
     <%= yield %>
