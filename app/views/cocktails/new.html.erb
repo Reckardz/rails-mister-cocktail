@@ -1,9 +1,8 @@
 <div class="container">
   <%= simple_form_for (@cocktail) do |l| %>
   <%= l.input :name %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
+  <%= l.input :photo %>
+  <%= l.input :photo_cache, as: :hidden %>
   <%= l.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
-
